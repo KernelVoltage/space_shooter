@@ -2,7 +2,9 @@
 
 Welcome to the definitive documentation for **Space Shooter** — a high-octane, action-packed 2D arcade space defense game built with cutting-edge performance in mind. Take command of the battle cruiser **Alpha Prime**, dodge relentless waves of hostile galactic forces, manage dynamic power-ups, and fight through 11 escalating planetary sectors!
 
-![Main Menu](Main.jpg)
+<p align="center">
+  <img src="Main.jpg" width="260" alt="Main Menu">
+</p>
 
 ---
 
@@ -33,9 +35,11 @@ The game's front-end architecture is engineered to provide smooth, cinematic vis
   * Dynamic player health gauge with real-time value smoothing.
   * Active Power-Up progress bars displaying active timer durations and multiplier stack levels.
 
-![Shop Screen](Shop.jpg)
-![Settings Screen](Setting.jpg)
-![Game Paused](Game_paused.jpg)
+<p align="center">
+  <img src="Shop.jpg" width="220" alt="Shop Screen">
+  <img src="Setting.jpg" width="220" alt="Settings Screen">
+  <img src="Game_paused.jpg" width="220" alt="Game Paused">
+</p>
 
 ---
 
@@ -62,8 +66,10 @@ The flight systems of **Alpha Prime** are specifically calibrated for precision 
 
 Hostile entities in Space Shooter fall into four distinct operational classes, each requiring unique combat responses:
 
-![Gameplay Action](Game_play.jpg)
-![Gameplay Boss Combat](Game_play%20%282%29.jpg)
+<p align="center">
+  <img src="Game_play.jpg" width="250" alt="Gameplay Action">
+  <img src="Game_play%20%282%29.jpg" width="250" alt="Gameplay Boss Combat">
+</p>
 
 ### 1. Standard Vanguard Fighters
 * **Behavior:** Enter from the top of the screen and fly strictly in **straight downward vectors**.
