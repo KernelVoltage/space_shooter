@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2qng4amtta6y"]
+
+[ext_resource type="Script" path="res://scripts/mega_boss.gd" id="1_mdoa6"]
+[ext_resource type="Texture2D" uid="uid://c8unf4rrjsfa5" path="res://asstes/Ships/boss_mega.png" id="1_qav5q"]
+
+[node name="MegaBoss" type="Area2D"]
+rotation = 3.14159
+script = ExtResource("1_mdoa6")
+
+[node name="BossMega" type="Sprite2D" parent="."]
+texture = ExtResource("1_qav5q")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-21, -17, -63, -149, -199, -67, -323, 21, -327, 89, -225, 109, -141, 151, -105, 203, -53, 211, -35, 161, 27, 155, 43, 205, 107, 211, 153, 141, 207, 141, 325, 89, 325, 23, 155, -71, 19, -149, -25, -145)
+
+[node name="Marker" type="Node2D" parent="."]
+
+[node name="Gun" type="Marker2D" parent="Marker"]
+position = Vector2(185, -130)
+
+[node name="Gun3" type="Marker2D" parent="Marker"]
+position = Vector2(170, -120)
+
+[node name="Gun4" type="Marker2D" parent="Marker"]
+position = Vector2(54.0005, -214)
+
+[node name="Gun5" type="Marker2D" parent="Marker"]
+position = Vector2(-52.9995, -214)
+
+[node name="Gun6" type="Marker2D" parent="Marker"]
+position = Vector2(-170, -121)
+
+[node name="Gun7" type="Marker2D" parent="Marker"]
+position = Vector2(-186, -130)
+
+[node name="Gun8" type="Marker2D" parent="Marker"]
+position = Vector2(-201, -121.001)
+
+[node name="Gun2" type="Marker2D" parent="Marker"]
+position = Vector2(201, -121.999)
+
+[node name="BossMegaThruster" type="Marker2D" parent="Marker"]
+position = Vector2(71, 224)
+
+[node name="BossMegaThruster2" type="Marker2D" parent="Marker"]
+position = Vector2(-71, 224)
+
+[node name="NormalThruster" type="Marker2D" parent="Marker"]
+position = Vector2(0, 170)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://co421u08grwvs"]
+
+[ext_resource type="Texture2D" uid="uid://d3mt30cn8l5c5" path="res://asstes/Ships/fighter_red.png" id="1_tx2ia"]
+[ext_resource type="Script" path="res://scripts/enemy_normal.gd" id="1_wsp6r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0b5ik"]
+radius = 83.0
+height = 262.0
+
+[node name="EnemyNormal" type="Area2D"]
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_wsp6r")
+
+[node name="FighterRed" type="Sprite2D" parent="."]
+texture = ExtResource("1_tx2ia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_0b5ik")
+
+[node name="ThrusterMarker" type="Marker2D" parent="."]
+position = Vector2(0, 155)
+rotation = 3.14159
+scale = Vector2(2, 2)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

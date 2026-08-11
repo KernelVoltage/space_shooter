@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbrow3b3vqn2"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_0aa36"]
+[ext_resource type="Script" path="res://scripts/hud_ui.gd" id="2_5w3rh"]
+[ext_resource type="Texture2D" uid="uid://b0oecvqp71tql" path="res://asstes/Background/background.png" id="2_stc1n"]
+[ext_resource type="Texture2D" uid="uid://beviqqcfbwecp" path="res://asstes/UI/Pause.png" id="3_0k32n"]
+[ext_resource type="Texture2D" uid="uid://bknk3hgo13bsi" path="res://asstes/Icons/Heart.png" id="3_4qomv"]
+[ext_resource type="PackedScene" uid="uid://bs5p840ap403f" path="res://scenes/player.tscn" id="3_06io0"]
+[ext_resource type="Texture2D" uid="uid://d4eww22m46h5i" path="res://asstes/Icons/Coin.png" id="4_57ijj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5t1x7"]
+draw_center = false
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0aa36")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="UI"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_5w3rh")
+
+[node name="PauseButton" type="TextureButton" parent="UI/HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -85.0
+offset_top = -3.0
+offset_right = 91.0
+offset_bottom = 179.0
+grow_horizontal = 0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_0k32n")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HUD"]
+layout_mode = 1
+offset_right = 229.0
+offset_bottom = 163.0
+
+[node name="HealthContainer" type="HBoxContainer" parent="UI/HUD/VBoxContainer"]
+layout_mode = 2
+
+[node name="HealthIcon" type="TextureRect" parent="UI/HUD/VBoxContainer/HealthContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("3_4qomv")
+expand_mode = 1
+
+[node name="HealthBar" type="ProgressBar" parent="UI/HUD/VBoxContainer/HealthContainer"]
+custom_minimum_size = Vector2(140, 18)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/background = SubResource("StyleBoxFlat_5t1x7")
+value = 100.0
+show_percentage = false
+
+[node name="CoinContainer" type="HBoxContainer" parent="UI/HUD/VBoxContainer"]
+layout_mode = 2
+
+[node name="CoinIcon" type="TextureRect" parent="UI/HUD/VBoxContainer/CoinContainer"]
+layout_mode = 2
+texture = ExtResource("4_57ijj")
+expand_mode = 1
+
+[node name="CoinLabel" type="Label" parent="UI/HUD/VBoxContainer/CoinContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="PowerupList" type="VBoxContainer" parent="UI/HUD/VBoxContainer"]
+layout_mode = 2
+
+[node name="SpawnTimer" type="Timer" parent="UI"]
+
+[node name="PhaseTimer" type="Timer" parent="UI"]
+
+[node name="AlertTimer" type="Timer" parent="UI"]
+
+[node name="AlertLabel" type="Label" parent="UI"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+position = Vector2(363.863, 637.954)
+rotation = 1.5708
+scale = Vector2(0.7767, 0.796255)
+texture = ExtResource("2_stc1n")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("3_06io0")]
+position = Vector2(364, 1120)

@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bw4gla4em4aai"]
+
+[ext_resource type="Texture2D" uid="uid://c6ga4isrwtpqn" path="res://asstes/Effect/Thruster_1.png" id="1_uwxjg"]
+[ext_resource type="Texture2D" uid="uid://bx70ups6o336q" path="res://asstes/Effect/Thruster_2.png" id="2_t48a3"]
+[ext_resource type="Texture2D" uid="uid://k3q4ls6pvmuk" path="res://asstes/Effect/Thruster_3.png" id="3_d6i84"]
+[ext_resource type="Texture2D" uid="uid://cw58xecb2onx3" path="res://asstes/Effect/Thruster_4.png" id="4_624xs"]
+[ext_resource type="Texture2D" uid="uid://s4lalcu21tun" path="res://asstes/Effect/Thruster_5.png" id="5_q215e"]
+[ext_resource type="Texture2D" uid="uid://crylbg7xu8m7m" path="res://asstes/Effect/Thruster_6.png" id="6_cvp44"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4xs2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uwxjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t48a3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d6i84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_624xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q215e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cvp44")
+}],
+"loop": true,
+"name": &"Thruster",
+"speed": 5.0
+}]
+
+[node name="Thruster" type="AnimatedSprite2D"]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_4xs2w")
+animation = &"Thruster"
+frame = 5
+frame_progress = 1.0

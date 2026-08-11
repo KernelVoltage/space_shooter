@@ -1,0 +1,119 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4rr0eshg6ib4"]
+
+[ext_resource type="Texture2D" uid="uid://b0oecvqp71tql" path="res://asstes/Background/background.png" id="1_kt5vq"]
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_sm1qk"]
+[ext_resource type="Texture2D" uid="uid://d2snq0c0ijkiv" path="res://asstes/UI/Panel_2.png" id="3_xg812"]
+[ext_resource type="Texture2D" uid="uid://bq4e66wgjjmvp" path="res://asstes/UI/Home.png" id="4_3qroe"]
+[ext_resource type="Texture2D" uid="uid://bs3pwg0rx8olx" path="res://asstes/UI/Shop.png" id="5_0et3s"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sm1qk")
+metadata/_edit_lock_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -473.0
+offset_top = -14.0
+offset_right = 479.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kt5vq")
+metadata/_edit_lock_ = true
+
+[node name="SettingPanel" type="NinePatchRect" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -300.0
+offset_right = 350.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xg812")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/SettingPanel"]
+layout_mode = 1
+offset_left = 88.0
+offset_top = 43.0
+offset_right = 430.0
+offset_bottom = 338.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="NinePatchRect/SettingPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 55
+text = "SETTINGS"
+
+[node name="MusicLabel" type="Label" parent="NinePatchRect/SettingPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "MUSIC"
+
+[node name="MusicSlider" type="HSlider" parent="NinePatchRect/SettingPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="SoundLabel" type="Label" parent="NinePatchRect/SettingPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "SOUND"
+
+[node name="SoundSlider" type="HSlider" parent="NinePatchRect/SettingPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="HomeButton" type="TextureButton" parent="NinePatchRect/SettingPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -167.0
+offset_right = -31.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_3qroe")
+stretch_mode = 5
+
+[node name="ShopButton" type="TextureButton" parent="NinePatchRect/SettingPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 129.5
+offset_top = -167.0
+offset_right = 309.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_0et3s")
+stretch_mode = 5

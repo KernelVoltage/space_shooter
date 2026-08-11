@@ -1,0 +1,166 @@
+[gd_scene load_steps=8 format=3 uid="uid://diqxek03iccml"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_yy5wo"]
+[ext_resource type="Texture2D" uid="uid://dh4md3vbfcsem" path="res://asstes/UI/Panel_1.png" id="2_383c4"]
+[ext_resource type="Texture2D" uid="uid://s5igudoq6s7s" path="res://asstes/UI/Retry.png" id="2_d43vf"]
+[ext_resource type="Texture2D" uid="uid://5dlulak64ql6" path="res://asstes/UI/Setting.png" id="4_4tq54"]
+[ext_resource type="Texture2D" uid="uid://bs3pwg0rx8olx" path="res://asstes/UI/Shop.png" id="5_2oel4"]
+[ext_resource type="Texture2D" uid="uid://cqp7r3bwdrw5h" path="res://asstes/UI/close.png" id="6_cuvkq"]
+[ext_resource type="Texture2D" uid="uid://d4eww22m46h5i" path="res://asstes/Icons/Coin.png" id="6_wv6qh"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yy5wo")
+metadata/_edit_lock_ = true
+
+[node name="GameOverPanel" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -300.0
+offset_right = 350.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_383c4")
+region_rect = Rect2(-27, 4, 483, 303)
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -143.0
+offset_top = 121.0
+offset_right = 143.0
+offset_bottom = 199.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER!"
+
+[node name="RetryButton" type="TextureButton" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -240.0
+offset_right = -93.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_d43vf")
+stretch_mode = 5
+
+[node name="SettingButton" type="TextureButton" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -89.0
+offset_top = -240.0
+offset_right = 91.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_4tq54")
+stretch_mode = 5
+
+[node name="ShopButton" type="TextureButton" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 79.0
+offset_top = -240.0
+offset_right = 259.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_2oel4")
+stretch_mode = 5
+
+[node name="Close" type="TextureButton" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 157.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("6_cuvkq")
+
+[node name="Coin" type="TextureRect" parent="GameOverPanel"]
+layout_direction = 2
+layout_mode = 0
+offset_left = 85.0
+offset_top = 218.0
+offset_right = 259.0
+offset_bottom = 394.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_wv6qh")
+
+[node name="CoinLabel" type="Label" parent="GameOverPanel"]
+layout_mode = 1
+offset_left = 182.0
+offset_top = 228.0
+offset_right = 201.0
+offset_bottom = 268.0
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="MissedLabel" type="Label" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 86.0
+offset_top = -16.0
+offset_right = 171.0
+offset_bottom = 24.0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "MISSED"
+
+[node name="MissedValue" type="Label" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 198.0
+offset_top = -16.0
+offset_right = 283.0
+offset_bottom = 24.0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "0"

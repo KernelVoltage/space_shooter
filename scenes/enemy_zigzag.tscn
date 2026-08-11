@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu8ud1nhwds1"]
+
+[ext_resource type="Script" path="res://scripts/enemy_zigzag.gd" id="1_7ilrs"]
+[ext_resource type="Texture2D" uid="uid://dncw6wp1dfnsn" path="res://asstes/Ships/striker_orange.png" id="2_ngpej"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxma0"]
+radius = 91.0
+height = 246.0
+
+[node name="EnemyZigzag" type="Area2D"]
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_7ilrs")
+
+[node name="InterceptorGold" type="Sprite2D" parent="."]
+texture = ExtResource("2_ngpej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_vxma0")
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="ThrusterMarker" type="Marker2D" parent="."]
+position = Vector2(0, 155)
+rotation = 3.14159
+scale = Vector2(2, 2)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

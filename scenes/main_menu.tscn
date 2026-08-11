@@ -1,0 +1,142 @@
+[gd_scene load_steps=8 format=3 uid="uid://din81snedwdmd"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_d1m8x"]
+[ext_resource type="Texture2D" uid="uid://cbon7pe1bqcg0" path="res://asstes/UI/Button_Idle.png" id="1_qrd3c"]
+[ext_resource type="Texture2D" uid="uid://b0oecvqp71tql" path="res://asstes/Background/background.png" id="1_v8hin"]
+[ext_resource type="Texture2D" uid="uid://ddljcheveqqm4" path="res://asstes/UI/Button_Pressed.png" id="2_08g8t"]
+[ext_resource type="Texture2D" uid="uid://dq55ktl2yogmy" path="res://asstes/UI/Button_Hover.png" id="3_f6lsq"]
+[ext_resource type="FontFile" uid="uid://bs558u4jyl544" path="res://asstes/fonts/Chewy-Regular.ttf" id="4_fvquo"]
+[ext_resource type="Texture2D" uid="uid://dw6adhhrdqk1c" path="res://asstes/UI/info.png" id="7_v7xmc"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d1m8x")
+
+[node name="NinePatchRect" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -473.0
+offset_top = -14.0
+offset_right = 479.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_v8hin")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.5
+offset_top = -544.0
+offset_right = 305.5
+offset_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Head" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fvquo")
+theme_override_font_sizes/font_size = 150
+text = " SPACE 
+ SHOOTER"
+
+[node name="PlayButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_qrd3c")
+texture_pressed = ExtResource("2_08g8t")
+texture_hover = ExtResource("3_f6lsq")
+
+[node name="PlayLabel" type="Label" parent="NinePatchRect/VBoxContainer/PlayButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = -68.5
+offset_right = 120.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fvquo")
+theme_override_font_sizes/font_size = 100
+text = "PLAY"
+
+[node name="SettingButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_qrd3c")
+texture_pressed = ExtResource("2_08g8t")
+texture_hover = ExtResource("3_f6lsq")
+
+[node name="SettingLabel" type="Label" parent="NinePatchRect/VBoxContainer/SettingButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = -68.5
+offset_right = 120.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fvquo")
+theme_override_font_sizes/font_size = 100
+text = "SETTING"
+
+[node name="ShopButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_qrd3c")
+texture_pressed = ExtResource("2_08g8t")
+texture_hover = ExtResource("3_f6lsq")
+
+[node name="ShopLabel" type="Label" parent="NinePatchRect/VBoxContainer/ShopButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = -68.5
+offset_right = 120.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_fvquo")
+theme_override_font_sizes/font_size = 100
+text = "SHOP"
+
+[node name="information" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 484.0
+offset_top = -82.0
+offset_right = 702.0
+offset_bottom = 94.0
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("7_v7xmc")

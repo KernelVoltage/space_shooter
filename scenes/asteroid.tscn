@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5ip4lug61jhh"]
+
+[ext_resource type="Script" path="res://scripts/asteroid.gd" id="1_bg71s"]
+[ext_resource type="Texture2D" uid="uid://c44sfr6p1sbr3" path="res://asstes/Asteroid/Asteroid_1.png" id="1_frpvf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qfwq"]
+
+[node name="Asteroid" type="Area2D"]
+script = ExtResource("1_bg71s")
+
+[node name="Asteroid1" type="Sprite2D" parent="."]
+texture = ExtResource("1_frpvf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6qfwq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
