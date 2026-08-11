@@ -227,5 +227,5 @@ This game is part of the **KernelVoltage Open-Source Ecosystem**. Explore connec
 * **Central Developer Profile:** [KernelVoltage GitHub Overview](https://github.com/KernelVoltage)
 * **Main Hub Repository:** [KernelVoltage Central Core](https://github.com/KernelVoltage/KernelVoltage)
 * **Web Applications Directory:** [Web Projects Repository](https://github.com/KernelVoltage/web-projects)
-* **Space Shooter Engine Source:** [Space Shooter Main Repository](https://github.com/KernelVoltage/space_shooter)
+* **Game Projects Hub:** [Game Projects Repository](https://github.com/KernelVoltage/game-projects)
 * **Browse All Public Repositories:** [KernelVoltage Repositories Directory](https://github.com/KernelVoltage?tab=repositories)
