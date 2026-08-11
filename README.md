@@ -195,3 +195,12 @@ Coins collected during gameplay are stored permanently in your player profile. S
 * **Language:** GDScript 2.0
 * **Target Aspect Ratio:** 16:9 Arcade Portrait & Landscape Responsive
 * **Physics Mode:** Area2D Precision Overlap & Signal Detection
+
+---
+
+## Network Navigation & Cross-Links
+
+- **Central Request Hub:** [KernelVoltage Main Repository](https://github.com/KernelVoltage/KernelVoltage)
+- **Web Applications Hub:** [Web Projects Repository](https://github.com/KernelVoltage/web-projects)
+- **Space Shooter Game:** [Space Shooter Repository](https://github.com/KernelVoltage/space_shooter)
+- **Public Codebase Directory:** [Browse All Repositories](https://github.com/KernelVoltage?tab=repositories)
