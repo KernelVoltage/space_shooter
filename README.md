@@ -1,10 +1,22 @@
 # Space Shooter: Ultimate Cosmic Warfare
 
-Welcome to the definitive documentation for **Space Shooter** — a high-octane, action-packed 2D arcade space defense game built with cutting-edge performance in mind. Take command of the battle cruiser **Alpha Prime**, dodge relentless waves of hostile galactic forces, manage dynamic power-ups, and fight through 11 escalating planetary sectors!
+Welcome to the official repository and developer documentation for **Space Shooter** — an action-packed 2D arcade space defense game built with Godot Engine 4. Take command of the battle cruiser **Alpha Prime**, dodge relentless waves of hostile galactic forces, manage dynamic power-ups, and fight through 11 escalating planetary sectors!
 
 <p align="center">
   <img src="Main.jpg" width="260" alt="Main Menu">
 </p>
+
+<p align="center">
+  <b>Playable in Browser • Mobile & Desktop Supported • 100% Free & Open Source</b>
+</p>
+
+---
+
+## Direct Action Hub
+
+* **Play Immediately / Download Builds:** Access the latest stable WebGL export or standalone binaries directly from our [Releases Section](https://github.com/KernelVoltage/space_shooter/releases).
+* **Test & Give Feedback:** Found a bug, balancing issue, or UI glitch? Open a ticket via [GitHub Issues](https://github.com/KernelVoltage/space_shooter/issues) to share your gameplay testing logs.
+* **Share With the Community:** Love arcade space shooters? Star this repository, fork the project, and share the battle across your developer networks!
 
 ---
 
@@ -178,6 +190,16 @@ Coins collected during gameplay are stored permanently in your player profile. S
 
 ---
 
+## Playtesting & Feedback Protocol
+
+We actively rely on player feedback to balance sector difficulty, weapon damage multipliers, and boss phase timers.
+
+* **Reporting Bugs:** Create a issue ticket on GitHub detailing your platform (Web, Android, Desktop), screen resolution, and steps to reproduce.
+* **Feature Requests:** Have an idea for a new power-up, enemy type, or control mode? Start a thread in our [Discussions Hub](https://github.com/KernelVoltage/space_shooter/discussions).
+* **Community Highlights:** Made a high-score run or completed Level 11? Share your screenshots and gameplay clips in the repository discussions!
+
+---
+
 ## Audio Engineering & Visual Dynamics
 
 * **Dynamic Audio Mixer:** Separate audio buses (`BGM` and `SFX`) ensure crisp explosion sounds without ducking background music quality.
@@ -198,9 +220,12 @@ Coins collected during gameplay are stored permanently in your player profile. S
 
 ---
 
-## Network Navigation & Cross-Links
+## Network Navigation & Ecosystem
 
-- **Central Request Hub:** [KernelVoltage Main Repository](https://github.com/KernelVoltage/KernelVoltage)
-- **Web Applications Hub:** [Web Projects Repository](https://github.com/KernelVoltage/web-projects)
-- **Space Shooter Game:** [Space Shooter Repository](https://github.com/KernelVoltage/space_shooter)
-- **Public Codebase Directory:** [Browse All Repositories](https://github.com/KernelVoltage?tab=repositories)
+This game is part of the **KernelVoltage Open-Source Ecosystem**. Explore connected repositories, tools, and web applications across our public codebase directory:
+
+* **Central Developer Profile:** [KernelVoltage GitHub Overview](https://github.com/KernelVoltage)
+* **Main Hub Repository:** [KernelVoltage Central Core](https://github.com/KernelVoltage/KernelVoltage)
+* **Web Applications Directory:** [Web Projects Repository](https://github.com/KernelVoltage/web-projects)
+* **Space Shooter Engine Source:** [Space Shooter Main Repository](https://github.com/KernelVoltage/space_shooter)
+* **Browse All Public Repositories:** [KernelVoltage Repositories Directory](https://github.com/KernelVoltage?tab=repositories)
