@@ -88,6 +88,10 @@ func _ready() -> void:
 	if sprite and sprite.texture:
 		update_player_collision(sprite.texture)
 
+	# Ensure signal connections for collisions
+	if not area_entered.is_connected(_on_area_entered):
+		area_entered.connect(_on_area_entered)
+
 func apply_shop_upgrades() -> void:
 	if not GameManager:
 		current_speed = base_speed
@@ -212,7 +216,7 @@ func shoot_laser() -> void:
 	if sprite and sprite.texture:
 		spawn_y = -(sprite.texture.get_size().y * sprite.scale.y * 0.5) - 5.0
 
-	# Purple Crystal Shooting - Multiplies laser count and width by level
+	# Purple Crystal Shooting
 	if is_purple_sequence and purple_timer > 0.0:
 		spawn_single_laser(Vector2(0.0, spawn_y), 0.0, active_lasers[0] if active_lasers.size() > 0 else "")
 		var max_pairs = min(purple_level * 2, 8)
@@ -223,7 +227,7 @@ func shoot_laser() -> void:
 			spawn_single_laser(Vector2(-x_offset, spawn_y + (i * 2.0)), -angle, tex_path)
 			spawn_single_laser(Vector2(x_offset, spawn_y + (i * 2.0)), angle, tex_path)
 
-	# Triple Shot - Multiplies angled laser pairs by level
+	# Triple Shot
 	elif is_triple_shot and triple_shot_timer > 0.0:
 		spawn_single_laser(Vector2(0.0, spawn_y), 0.0, "")
 		var max_pairs = min(triple_shot_level, 5)
@@ -273,11 +277,11 @@ func take_damage(amount: float) -> void:
 	update_ui_health()
 
 	is_invulnerable = true
-	get_tree().create_timer(0.15).timeout.connect(func(): is_invulnerable = false)
+	get_tree().create_timer(0.2).timeout.connect(func(): is_invulnerable = false)
 
 	if is_instance_valid(sprite):
 		sprite.modulate = Color(1.0, 0.3, 0.3)
-		get_tree().create_timer(0.08).timeout.connect(func():
+		get_tree().create_timer(0.1).timeout.connect(func():
 			if is_instance_valid(sprite):
 				sprite.modulate = Color(0.3, 0.7, 1.0) if is_shielded else Color(1.0, 1.0, 1.0)
 		)
@@ -286,24 +290,36 @@ func take_damage(amount: float) -> void:
 		destroy_player()
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("powerup") or area.name.contains("Powerup"):
+	# Ignore powerups and player's own lasers
+	if area.is_in_group("powerup") or area.name.contains("Powerup") or area.is_in_group("player_laser"):
 		return
 
-	if area.name.contains("EnemyLaser") or area.is_in_group("enemy_laser"):
+	# Handle Enemy Laser Hits
+	if area.is_in_group("enemy_laser") or area.name.contains("EnemyLaser") or area.name.contains("Laser"):
 		area.queue_free()
-		take_damage(12.0)
+		take_damage(15.0)
 		return
 
-	if area.is_in_group("enemies") or area.name.contains("Enemy") or area.name.contains("Asteroid") or area.name.contains("Boss"):
+	# Handle Zigzag Enemy Collision (Instant Mutual Destruction)
+	if area.is_in_group("zigzag") or area.name.to_lower().contains("zigzag"):
 		if area.has_method("destroy"):
 			area.destroy()
 		else:
 			area.queue_free()
 
-		if is_shielded:
-			return
+		if not is_shielded:
+			destroy_player()
+		return
 
-		destroy_player()
+	# Handle General Enemies, Bosses & Asteroids Collision
+	if area.is_in_group("enemies") or area.name.contains("Enemy") or area.name.contains("Asteroid") or area.name.contains("Boss"):
+		if area.has_method("take_damage"):
+			area.take_damage(50.0)
+		elif area.has_method("destroy"):
+			area.destroy()
+
+		if not is_shielded:
+			destroy_player()
 
 func heal(amount: float) -> void:
 	current_health = clamp(current_health + amount, 0.0, max_health)
@@ -315,7 +331,7 @@ func upgrade_max_health(extra_amount: float) -> void:
 	update_ui_health()
 
 func destroy_player() -> void:
-	if is_shielded or is_invulnerable:
+	if is_shielded:
 		return
 
 	Engine.time_scale = 1.0
