@@ -225,7 +225,6 @@ We actively rely on player feedback to balance sector difficulty, weapon damage 
 This game is part of the **KernelVoltage Open-Source Ecosystem**. Explore connected repositories, tools, and web applications across our public codebase directory:
 
 * **Central Developer Profile:** [KernelVoltage GitHub Overview](https://github.com/KernelVoltage)
-* **Main Hub Repository:** [KernelVoltage Central Core](https://github.com/KernelVoltage/KernelVoltage)
 * **Web Applications Directory:** [Web Projects Repository](https://github.com/KernelVoltage/web-projects)
 * **Game Projects Hub:** [Game Projects Repository](https://github.com/KernelVoltage/game-projects)
 * **Browse All Public Repositories:** [KernelVoltage Repositories Directory](https://github.com/KernelVoltage?tab=repositories)
